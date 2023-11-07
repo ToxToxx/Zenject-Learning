@@ -9,6 +9,8 @@ public class MovementHandler : IDisposable
     {
         _input = input;
 
+        Debug.Log(input.GetType());
+
         _input.OnClickDown += OnClickDown;
         _input.OnClickUp += OnClickUp;
         _input.OnDrag += OnDrag;
