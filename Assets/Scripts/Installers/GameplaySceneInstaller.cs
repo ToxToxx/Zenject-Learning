@@ -8,4 +8,6 @@ public class GameplaySceneInstaller : MonoInstaller
        
         Container.Bind<MovementHandler>().FromNew().AsSingle().NonLazy();
     }
+
+    
 }

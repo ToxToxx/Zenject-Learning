@@ -4,12 +4,15 @@ using UnityEngine;
 public class MovementHandler : IDisposable
 {
     private IInput _input;
+    private IMovable _movable;
 
-    public MovementHandler(IInput input)
+    public MovementHandler(IInput input, IMovable movable)
     {
         _input = input;
+        _movable = movable;
 
         Debug.Log(input.GetType());
+        Debug.Log(movable.GetType());
 
         _input.OnClickDown += OnClickDown;
         _input.OnClickUp += OnClickUp;
@@ -26,16 +29,16 @@ public class MovementHandler : IDisposable
 
     private void OnDrag(Vector3 position)
     {
-       //код для перетаскивания
+        Debug.Log("Drag");
     }
 
     private void OnClickUp(Vector3 position)
     {
-        //код при поднятии кнопки
+        Debug.Log("Click Up");
     }
 
     private void OnClickDown(Vector3 position)
     {
-        //код для нажатия
+        Debug.Log("Click Down");
     }
 }

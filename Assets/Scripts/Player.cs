@@ -3,8 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IMovable
 {
+    public float Speed => 5f;
+    public Transform Transform => transform;
+
+
+
+    /*
     private MovementHandler _movementHandler;
 
     [Inject]
@@ -12,5 +18,5 @@ public class Player : MonoBehaviour
     {
         Debug.Log(movementHandler.GetType());
         _movementHandler = movementHandler;
-    }
+    }*/
 }
