@@ -5,18 +5,11 @@ using Zenject;
 
 public class Player : MonoBehaviour, IMovable
 {
-    public float Speed => 5f;
+    public float Speed { get; private set; }
     public Transform Transform => transform;
 
 
-
-    /*
-    private MovementHandler _movementHandler;
-
     [Inject]
-    private void Construct(MovementHandler movementHandler)
-    {
-        Debug.Log(movementHandler.GetType());
-        _movementHandler = movementHandler;
-    }*/
+    private void Construct(PlayerConfig playerConfig)
+        => Speed = playerConfig.Speed;
 }
