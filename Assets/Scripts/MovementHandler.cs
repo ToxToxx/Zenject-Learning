@@ -22,6 +22,7 @@ public class MovementHandler : IDisposable
 
     public void Dispose()
     {
+        Debug.Log("Произошли отписки");
         _input.OnClickDown -= OnClickDown;
         _input.OnClickUp -= OnClickUp;
         _input.OnDrag -= OnDrag;

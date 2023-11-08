@@ -23,6 +23,6 @@ public class GameplaySceneInstaller : MonoInstaller
     
     private void BindMovementService()
     {
-        Container.Bind<MovementHandler>().AsSingle().NonLazy();
+        Container.BindInterfacesAndSelfTo<MovementHandler>().AsSingle().NonLazy();
     }
 }
