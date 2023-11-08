@@ -12,7 +12,7 @@ public class MovementHandler : IDisposable
         _movable = movable;
 
         Debug.Log(input.GetType());
-        Debug.Log(movable.GetType());
+        Debug.Log($"Скорость полученного IMovable: {movable.Speed}");
 
         _input.OnClickDown += OnClickDown;
         _input.OnClickUp += OnClickUp;
