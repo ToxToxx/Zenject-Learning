@@ -12,6 +12,8 @@ public class GameplaySceneInstaller : MonoInstaller
     {
         BindPlayer();
         BindMovementService();
+        BindTickableService();
+        BindInitializableService();
     }
 
     private void BindPlayer()
@@ -24,5 +26,14 @@ public class GameplaySceneInstaller : MonoInstaller
     private void BindMovementService()
     {
         Container.BindInterfacesAndSelfTo<MovementHandler>().AsSingle().NonLazy();
+    }
+
+    private void BindTickableService()
+    {
+        Container.BindInterfacesAndSelfTo<HelloWorldTick>().AsSingle().NonLazy();
+    }
+    private void BindInitializableService()
+    {
+        Container.BindInterfacesAndSelfTo<ExampleOfIInitializable>().AsSingle().NonLazy();
     }
 }
